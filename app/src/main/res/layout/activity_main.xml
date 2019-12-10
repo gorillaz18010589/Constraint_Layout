@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+   <!--A,B按鈕介紹誰的哪邊對應誰的哪邊,先講我在講對誰-->
+    <Button
+        android:id="@+id/button_A"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        />
+
+    <Button
+        android:id="@+id/button_B"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_A"
+        app:layout_constraintLeft_toRightOf="@+id/button_A"
+        android:layout_marginLeft="200dp"
+        />
+
+
+    <!--按鈕C gone調時app:layout_goneMarginLeft="300dp"才會保留他的距離,你走了(gone)D才遠距離 -->
+    <Button
+        android:id="@+id/button_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        app:layout_constraintTop_toBottomOf="@id/button_A"
+        android:visibility="gone"
+        />
+
+    <Button
+        android:id="@+id/button_d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="d"
+        app:layout_constraintTop_toBottomOf="@id/button_A"
+        app:layout_constraintLeft_toRightOf="@id/button_c"
+        app:layout_goneMarginLeft="300dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

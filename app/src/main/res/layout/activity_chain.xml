@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChainActivity">
+
+    <!--1.一定要左右拉手,互相對應-->
+    <!--2.constraintHorizontal_chainStyle:屬性由左邊的隊長設定-->
+    <!--CHAIN_SPREAD :大家空間平均 (默認)-->
+    <!--加權鏈-在CHAIN_SPREAD模式下，如果將某些小部件設置為MATCH_CONSTRAINT，它們將分割可用空間-->
+    <!--CHAIN_SPREAD_INSIDE - 把鎖鏈剩下的空間分配滿,A跟C網邊框貼齊-->
+    <!--CHAIN_PACKED-鏈中的元素將被打包在一起。子項的水平或垂直偏差屬性將影響打包元素的位置-->
+    <!--WEIGHTED CHAIN:可以依各自權重,來決定寬度-->
+    <!--Packed Chain: 一整包,打包在一塊年再一起-->
+    <!--Packed Chain with Bias :打包在一塊,但可以有點偏心,哪邊空間多一點少一點-->
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button2"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        />
+
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="b"
+        app:layout_constraintLeft_toRightOf="@+id/button"
+        app:layout_constraintRight_toLeftOf="@id/button3"
+        />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/button2"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="c"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
